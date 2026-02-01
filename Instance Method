@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+class Student {
+    int rollNo;
+    String name;
+
+    // Instance method
+    void display() {
+        System.out.println("Roll No: " + rollNo);
+        System.out.println("Name   : " + name);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Student s = new Student();   // object creation
+
+        System.out.print("Enter Roll No: ");
+        s.rollNo = sc.nextInt();
+
+        sc.nextLine(); // clear buffer
+
+        System.out.print("Enter Name: ");
+        s.name = sc.nextLine();
+
+        // Calling instance method using object
+        s.display();
+
+        sc.close();
+    }
+}
