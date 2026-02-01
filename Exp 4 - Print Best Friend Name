@@ -1,0 +1,5 @@
+class PrintBestFriendName {
+    public static void main(String[] args) {
+        System.out.println("My Best Friend's Name is Aman");
+    }
+}
