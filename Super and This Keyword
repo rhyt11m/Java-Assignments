@@ -1,0 +1,38 @@
+class Parent {
+    int x = 10;
+
+    Parent() {
+        System.out.println("Parent class constructor");
+    }
+
+    void show() {
+        System.out.println("This is Parent class method");
+    }
+}
+
+class Child extends Parent {
+    int x = 20;
+
+    Child() {
+        // Calls parent class constructor
+        super();
+
+        System.out.println("Child class constructor");
+    }
+
+    void display() {
+        // this keyword refers to current class variable
+        System.out.println("Value of x using this: " + this.x);
+
+        // super keyword refers to parent class variable
+        System.out.println("Value of x using super: " + super.x);
+
+        // Calling parent class method
+        super.show();
+    }
+
+    public static void main(String[] args) {
+        Child obj = new Child();
+        obj.display();
+    }
+}
