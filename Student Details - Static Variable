@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+class Student {
+    int rollNo;
+    String name;
+    long prn;
+
+    // Static variable (same for all students)
+    static String collegeName = "ABC Engineering College";
+
+    Student(int r, String n, long p) {
+        rollNo = r;
+        name = n;
+        prn = p;
+    }
+
+    void display() {
+        System.out.println("College Name: " + collegeName);
+        System.out.println("Name        : " + name);
+        System.out.println("Roll No     : " + rollNo);
+        System.out.println("PRN         : " + prn);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Roll No: ");
+        int roll = sc.nextInt();
+
+        System.out.print("Enter PRN: ");
+        long prn = sc.nextLong();
+
+        Student s = new Student(roll, name, prn);
+        s.display();
+
+        sc.close();
+    }
+}
