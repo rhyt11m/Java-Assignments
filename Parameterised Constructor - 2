@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+class Calculator {
+    int a, b;
+
+    // Parameterized constructor
+    Calculator(int x, int y) {
+        a = x;
+        b = y;
+    }
+
+    void calculate(int choice) {
+        switch (choice) {
+            case 1:
+                System.out.println("Sum = " + (a + b));
+                break;
+            case 2:
+                System.out.println("Subtraction = " + (a - b));
+                break;
+            case 3:
+                System.out.println("Multiplication = " + (a * b));
+                break;
+            case 4:
+                if (b != 0)
+                    System.out.println("Division = " + (a / b));
+                else
+                    System.out.println("Cannot divide by zero");
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = sc.nextInt();
+
+        System.out.println("Choose operation:");
+        System.out.println("1. Sum");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
+
+        int choice = sc.nextInt();
+
+        // Object creation using parameterized constructor
+        Calculator c = new Calculator(num1, num2);
+        c.calculate(choice);
+
+        sc.close();
+    }
+}
