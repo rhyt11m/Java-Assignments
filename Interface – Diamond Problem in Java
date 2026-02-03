@@ -1,0 +1,29 @@
+// Interface A
+interface A {
+    default void show() {
+        System.out.println("Show method from Interface A");
+    }
+}
+
+// Interface B
+interface B {
+    default void show() {
+        System.out.println("Show method from Interface B");
+    }
+}
+
+// Class implementing both interfaces
+class DiamondProblem implements A, B {
+
+    // Must override show() to resolve ambiguity
+    public void show() {
+        A.super.show();   // calling Interface A method
+        B.super.show();   // calling Interface B method
+        System.out.println("Show method from Class");
+    }
+
+    public static void main(String[] args) {
+        DiamondProblem obj = new DiamondProblem();
+        obj.show();
+    }
+}
