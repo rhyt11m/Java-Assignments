@@ -1,0 +1,16 @@
+// Final class (cannot be inherited)
+final class FinalDemo {
+
+    // Final variable (constant)
+    final int SPEED_LIMIT = 80;
+
+    // Final method (cannot be overridden)
+    final void display() {
+        System.out.println("Speed Limit: " + SPEED_LIMIT);
+    }
+
+    public static void main(String[] args) {
+        FinalDemo obj = new FinalDemo();
+        obj.display();
+    }
+}
